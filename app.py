@@ -23,6 +23,11 @@ def greeting(request, response, name):
 def get_age(request, response, age):
     response.text = "Your age is %d" % age
 
+@app.route("/book")
+class BooksResource:
+    def get(self, req, resp):
+        resp.text = "Books Page"
+
 
 
 
