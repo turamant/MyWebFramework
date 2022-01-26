@@ -16,14 +16,14 @@ class API:
 
         return response(environ, start_response)
 
-    def findd_handler(self, request_path):
+    def find_handler(self, request_path):
         for path, handler in self.routes.items():
             if path == request_path:
                 return handler
 
     def handle_request(self, request):
         response = Response()
-        handler = self.findd_handler(request_path=request.path)
+        handler = self.find_handler(request_path=request.path)
         if handler is not None:
             handler(request, response)
         else:
